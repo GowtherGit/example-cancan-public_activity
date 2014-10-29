@@ -1,0 +1,14 @@
+h1 Listing Activities
+table.table.table-striped.table-bordered.table-condensed.sortable
+  thead
+    tr
+      th= "Activities"
+  tbody
+    - @activities.each do |activity|
+      tr
+        td valign="top"
+          = activity.owner.email
+          = render_activity(activity)
+  tfoot
+    tr
+      td colspan="3"

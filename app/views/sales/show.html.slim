@@ -1,0 +1,27 @@
+p#notice= notice
+p
+  strong Name:
+  = @sale.name
+= link_to 'Edit', edit_sale_path(@sale)
+= '|'
+= link_to 'Back', sales_path
+h1 Listing Item
+table.table.table-striped
+  thead
+    tr
+      th Product
+      th price
+      th quantity
+      th total
+      th
+  tbody
+    - @sale.items.each do |item|
+      tr
+        td= item.product.name
+        td= item.product.price
+        td= item.quantity
+        td= item.total
+hr
+  p Total
+  = @sale.total
+  hr/
